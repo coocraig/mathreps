@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pregame">
+
+    <fragment
+        android:id="@+id/pregame"
+        android:name="com.example.mathreps.pregame"
+        android:label="fragment_pregame"
+        tools:layout="@layout/fragment_pregame" >
+        <action
+            android:id="@+id/action_pregame_to_settings"
+            app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_pregame_to_statisticsOV"
+            app:destination="@id/statisticsOV" />
+        <action
+            android:id="@+id/action_pregame_to_problem"
+            app:destination="@id/problem" />
+    </fragment>
+    <fragment
+        android:id="@+id/statisticsOV"
+        android:name="com.example.mathreps.statisticsOV"
+        android:label="fragment_statistics_o_v"
+        tools:layout="@layout/fragment_statistics_o_v" >
+        <action
+            android:id="@+id/action_statisticsOV_to_settings"
+            app:destination="@id/settings" />
+        <action
+            android:id="@+id/action_statisticsOV_to_pregame"
+            app:destination="@id/pregame" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.mathreps.settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings_to_statisticsOV"
+            app:destination="@id/statisticsOV" />
+        <action
+            android:id="@+id/action_settings_to_pregame"
+            app:destination="@id/pregame" />
+    </fragment>
+    <fragment
+        android:id="@+id/problem"
+        android:name="com.example.mathreps.Problem"
+        android:label="fragment_problem"
+        tools:layout="@layout/fragment_problem" >
+        <action
+            android:id="@+id/action_problem_to_results"
+            app:destination="@id/results" />
+    </fragment>
+    <fragment
+        android:id="@+id/results"
+        android:name="com.example.mathreps.results"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_results" >
+        <action
+            android:id="@+id/action_results_to_problem"
+            app:destination="@id/problem" />
+        <action
+            android:id="@+id/action_results_to_pregame"
+            app:destination="@id/pregame" />
+    </fragment>
+</navigation>
