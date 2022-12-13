@@ -8,7 +8,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.mathreps.MathRepsViewModel" />
+            type="com.example.mathreps.MathViewModel" />
 
         <variable
             name="pregame"
@@ -165,7 +165,8 @@
             app:layout_constraintBottom_toTopOf="@+id/preprebutton"
             app:layout_constraintEnd_toEndOf="@+id/preprebutton"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/prestatbutton" />
+            app:layout_constraintStart_toEndOf="@+id/prestatbutton"
+            android:onClick='@{() -> pregame.toGame()}'/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

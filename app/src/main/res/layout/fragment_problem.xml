@@ -1,14 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Problem">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_problem"
+    tools:context=".ProblemFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.mathreps.MathViewModel" />
+
+        <variable
+            name="problem"
+            type="com.example.mathreps.Problem" />
+
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        >
 
-</FrameLayout>
+
+        <TextView
+            android:id="@+id/largeNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text='@{viewModel.largeNumber.toString()}'
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="200dp"
+            app:layout_constraintBottom_toTopOf="@+id/answer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/multiplcationSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="196dp"
+            android:text="x"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="200dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/smallNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="170dp"
+            android:text='@{viewModel.smallNumber.toString()}'
+            android:textColor="@color/black"
+
+            android:textSize="200dp"
+            app:layout_constraintBottom_toBottomOf="@+id/multiplcationSign"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.819"
+            app:layout_constraintStart_toEndOf="@+id/multiplcationSign"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/answer"
+            android:layout_width="389dp"
+            android:layout_height="82dp"
+            android:ems="10"
+            android:hint="RESULT"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.764" />
+
+        <Button
+            android:id="@+id/submitAnswerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="60dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer"
+            app:layout_constraintVertical_bias="0.403"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

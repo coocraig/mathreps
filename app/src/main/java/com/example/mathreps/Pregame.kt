@@ -13,20 +13,20 @@ import com.example.mathreps.databinding.FragmentPregameBinding
 class Pregame : Fragment() {
 
 
-    // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
-    // to share the ViewModel across fragments.
-    private val viewModel: MathRepsViewModel by activityViewModels {
-        MathRepsViewModelFactory(
-            (activity?.application as MathRepsApplication).database
-                .itemDao()
-        )
-    }
+//    // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
+//    // to share the ViewModel across fragments.
+//    private val viewModel: MathRepsViewModel by activityViewModels {
+//        MathRepsViewModelFactory(
+//            (activity?.application as MathRepsApplication).database
+//                .itemDao()
+//        )
+//    }
 
     private var _binding: FragmentPregameBinding? = null
 
     private val binding get() = _binding!!
 
-    //private val sharedViewModel: MathRepsViewModel by activityViewModels()
+    private val viewModel: MathViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,5 +62,21 @@ class Pregame : Fragment() {
     fun toStats()
     {
         findNavController().navigate(R.id.action_pregame_to_statisticsOV)
+    }
+
+    //to be called upon pressing the big button
+    fun toGame()
+    {
+        //determines which radio was selected and sets the range accordingly.
+        if(binding.easyButton.isChecked) {
+            viewModel.setRange("easy")
+        }
+        else if (binding.medButton.isChecked) {
+            viewModel.setRange("medium")
+        }
+        else {
+            viewModel.setRange("hard")
+        }
+        findNavController().navigate(R.id.action_pregame_to_problem)
     }
 }

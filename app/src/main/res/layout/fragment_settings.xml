@@ -8,7 +8,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.mathreps.MathRepsViewModel" />
+            type="com.example.mathreps.MathViewModel" />
 
         <variable
             name="settings"
