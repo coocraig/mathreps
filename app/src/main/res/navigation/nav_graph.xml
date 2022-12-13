@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/pregame"
-        android:name="com.example.mathreps.pregame"
+        android:name="com.example.mathreps.Pregame"
         android:label="fragment_pregame"
         tools:layout="@layout/fragment_pregame" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/settings"
-        android:name="com.example.mathreps.settings"
+        android:name="com.example.mathreps.Settings"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
