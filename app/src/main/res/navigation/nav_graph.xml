@@ -15,16 +15,16 @@
             app:destination="@id/settings" />
         <action
             android:id="@+id/action_pregame_to_statisticsOV"
-            app:destination="@id/statisticsOV" />
+            app:destination="@id/statistics" />
         <action
             android:id="@+id/action_pregame_to_problem"
             app:destination="@id/problem" />
     </fragment>
     <fragment
-        android:id="@+id/statisticsOV"
-        android:name="com.example.mathreps.statisticsOV"
-        android:label="fragment_statistics_o_v"
-        tools:layout="@layout/fragment_statistics_o_v" >
+        android:id="@+id/statistics"
+        android:name="com.example.mathreps.Statistics"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics">
         <action
             android:id="@+id/action_statisticsOV_to_settings"
             app:destination="@id/settings" />
@@ -39,7 +39,7 @@
         tools:layout="@layout/fragment_settings" >
         <action
             android:id="@+id/action_settings_to_statisticsOV"
-            app:destination="@id/statisticsOV" />
+            app:destination="@id/statistics" />
         <action
             android:id="@+id/action_settings_to_pregame"
             app:destination="@id/pregame" />
