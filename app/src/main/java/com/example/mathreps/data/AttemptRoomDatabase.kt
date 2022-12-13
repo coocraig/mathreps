@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 @Database(entities = [Attempt::class], version = 1, exportSchema = false)
 abstract class AttemptRoomDatabase : RoomDatabase() {
 
-    abstract fun itemDao(): AttemptDao
+    abstract fun attemptDao(): AttemptDao
 
     companion object {
         @Volatile

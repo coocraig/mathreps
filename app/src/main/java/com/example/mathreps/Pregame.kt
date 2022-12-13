@@ -13,8 +13,8 @@ import com.example.mathreps.databinding.FragmentPregameBinding
 class Pregame : Fragment() {
 
 
-//    // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
-//    // to share the ViewModel across fragments.
+    // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
+    // to share the ViewModel across fragments.
 //    private val viewModel: MathRepsViewModel by activityViewModels {
 //        MathRepsViewModelFactory(
 //            (activity?.application as MathRepsApplication).database

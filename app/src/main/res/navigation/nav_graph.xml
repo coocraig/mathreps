@@ -50,12 +50,12 @@
         android:label="fragment_problem"
         tools:layout="@layout/fragment_problem" >
         <action
-            android:id="@+id/action_problem_to_results"
-            app:destination="@id/results" />
+            android:id="@+id/action_problem_to_rating"
+            app:destination="@id/rating" />
     </fragment>
     <fragment
         android:id="@+id/results"
-        android:name="com.example.mathreps.results"
+        android:name="com.example.mathreps.Results"
         android:label="fragment_results"
         tools:layout="@layout/fragment_results" >
         <action
@@ -64,5 +64,14 @@
         <action
             android:id="@+id/action_results_to_pregame"
             app:destination="@id/pregame" />
+    </fragment>
+    <fragment
+        android:id="@+id/rating"
+        android:name="com.example.mathreps.Rating"
+        android:label="fragment_rating"
+        tools:layout="@layout/fragment_rating" >
+        <action
+            android:id="@+id/action_rating_to_results"
+            app:destination="@id/results" />
     </fragment>
 </navigation>

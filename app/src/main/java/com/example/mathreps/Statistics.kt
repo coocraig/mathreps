@@ -16,9 +16,9 @@ class Statistics : Fragment() {
     // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
     // to share the ViewModel across fragments.
     private val viewModel: MathRepsViewModel by activityViewModels {
-        MathRepsViewModelFactory(
+        MathRepsViewModel.MathRepsViewModelFactory(
             (activity?.application as MathRepsApplication).database
-                .itemDao()
+                .attemptDao()
         )
     }
 

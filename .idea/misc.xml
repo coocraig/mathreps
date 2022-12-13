@@ -6,7 +6,9 @@
         <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/drawable/round_btn.xml" value="0.2245" />
         <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/layout/activity_main.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/layout/fragment_pregame.xml" value="0.264" />
-        <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/layout/fragment_problem.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/layout/fragment_problem.xml" value="0.1" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/layout/fragment_rating.xml" value="0.1" />
+        <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/layout/fragment_results.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/layout/fragment_statistics.xml" value="0.24909420289855072" />
         <entry key="..\:/Users/Owner/AndroidStudioProjects/MathReps/app/src/main/res/layout/fragment_statistics_o_v.xml" value="0.25416666666666665" />
