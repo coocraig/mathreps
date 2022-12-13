@@ -14,18 +14,18 @@ import com.example.mathreps.databinding.FragmentSettingsBinding
 class Settings : Fragment() {
     // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
     // to share the ViewModel across fragments.
-    private val viewModel: MathRepsViewModel by activityViewModels {
-        MathRepsViewModelFactory(
-            (activity?.application as MathRepsApplication).database
-                .itemDao()
-        )
-    }
+//    private val viewModel: MathRepsViewModel by activityViewModels {
+//        MathRepsViewModelFactory(
+//            (activity?.application as MathRepsApplication).database
+//                .itemDao()
+//        )
+//    }
 
     private var _binding: FragmentSettingsBinding? = null
 
     private val binding get() = _binding!!
 
-    //private val sharedViewModel: MathRepsViewModel by activityViewModels()
+    private val sharedViewModel: MathViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +45,11 @@ class Settings : Fragment() {
         binding.apply {
             viewModel = this.viewModel
             settings = this@Settings
+        }
+
+        binding.submitButton.setOnClickListener{
+            sharedViewModel.setAudio(binding.toggle.isChecked)
+            //findNavController().navigate(R.id.action_settings_to_pregame)
         }
     }
 

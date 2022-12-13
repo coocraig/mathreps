@@ -9,8 +9,6 @@ import androidx.room.PrimaryKey
 data class Attempt(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    @ColumnInfo(name = "difficulty")
-    val difficulty: String,
     @ColumnInfo(name = "wol")
     val winOrLoss: String,
 )

@@ -20,19 +20,7 @@
         android:layout_height="match_parent"
         >
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="179dp"
-        android:layout_marginTop="288dp"
-        android:layout_marginEnd="174dp"
-        android:text="PreGame"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
+        <Button
         android:id="@+id/prestatbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,5 +66,106 @@
         app:layout_constraintTop_toTopOf="@+id/preprebutton"
             android:onClick='@{() -> pregame.toSettings()}'
             />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="-33"
+            android:text="MATH"
+            android:textColor="#000000"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.139"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.092"
+            tools:text="MATH" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:rotation="17"
+            android:text="REPS"
+            android:textColor="#000000"
+            android:textSize="60sp"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:text="REPS" />
+
+        <RadioGroup
+            android:id="@+id/difficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.121"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="-0.411">
+
+            <RadioButton
+                android:id="@+id/easyButton"
+                android:layout_width="127dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Easy"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/medButton"
+                android:layout_width="127dp"
+                android:layout_height="wrap_content"
+                android:text="Medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="25sp"/>
+            <RadioButton
+                android:id="@+id/hardButton"
+                android:layout_width="127dp"
+                android:layout_height="wrap_content"
+                android:text="Hard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="25sp"/>
+    </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Difficulty"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/difficulty"
+            app:layout_constraintEnd_toEndOf="@+id/difficulty"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/difficulty" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:width="150sp"
+            android:height="150sp"
+            android:text="Begin"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:cornerRadius="75dp"
+            app:layout_constraintBottom_toTopOf="@+id/preprebutton"
+            app:layout_constraintEnd_toEndOf="@+id/preprebutton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/prestatbutton" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

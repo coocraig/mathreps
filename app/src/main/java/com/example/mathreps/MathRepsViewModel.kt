@@ -1,13 +1,13 @@
 package com.example.mathreps
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.mathreps.data.Attempt
 import com.example.mathreps.data.AttemptDao
 import kotlinx.coroutines.launch
 
+//Model that is exclusively used for accessing database type shit
 class MathRepsViewModel(private val attemptDao: AttemptDao) : ViewModel() {
+
 
     //Inserts an attempt to the database
     private fun insertAttempt(attempt: Attempt){
@@ -16,15 +16,14 @@ class MathRepsViewModel(private val attemptDao: AttemptDao) : ViewModel() {
         }
     }
 
-    private fun getNewAttemptEntry(diff: String, wOL: String): Attempt {
+    private fun getNewAttemptEntry(wOL: String): Attempt {
         return Attempt(
-            difficulty = diff,
             winOrLoss = wOL
         )
     }
 
-    fun addNewAttempt(diff: String, wOL : String) {
-        val newAttempt = getNewAttemptEntry(diff, wOL)
+    fun addNewAttempt(wOL : String) {
+        val newAttempt = getNewAttemptEntry(wOL)
         insertAttempt(newAttempt)
     }
 
