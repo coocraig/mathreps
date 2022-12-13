@@ -15,7 +15,21 @@ class MathViewModel() : ViewModel(){
         _audio.value = bool
     }
 
+    //The amount of reps in current sesssion
+    private val _seshReps = MutableLiveData<Int?>(0)
+    val seshReps: LiveData<Int?> = _seshReps
 
+    //The amount of reps in current sesssion
+    private val _seshCorrect = MutableLiveData<Int?>(0)
+    val seshCorrect: LiveData<Int?> = _seshCorrect
+
+    //The amount of reps in current sesssion
+    private val _seshCorrectString = MutableLiveData<String?>("0")
+    val seshCorrectString: LiveData<Int?> = _seshCorrect
+
+    fun setSeshStrings(){
+        _seshCorrectString.value = _seshCorrect.value.toString()
+    }
 
     //The different ranges
     private final val easyRange = (2..10)
@@ -55,6 +69,7 @@ class MathViewModel() : ViewModel(){
         _smallNumber.value = (2..9).random()
         _largeNumber.value = largeRange?.random()
         _actualAnswer.value = _smallNumber.value!! * _largeNumber.value!!
+        _seshReps.value = _seshReps.value!! + 1
     }
 
     //the answer given by the user
@@ -77,10 +92,13 @@ class MathViewModel() : ViewModel(){
     fun setResultText() {
         if(_answer.value?.toInt() == _actualAnswer.value?.toInt()){
             _resultText.value = "Correct!"
+            _seshCorrect.value = _seshCorrect.value!! + 1
+            setSeshStrings()
         } else {
             _resultText.value = "Wrong :("
         }
     }
+
 
 }
 

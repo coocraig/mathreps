@@ -15,7 +15,7 @@ import com.example.mathreps.databinding.FragmentStatisticsBinding
 class Statistics : Fragment() {
     // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
     // to share the ViewModel across fragments.
-    private val viewModel: MathRepsViewModel by activityViewModels {
+    private val dataViewModel: MathRepsViewModel by activityViewModels {
         MathRepsViewModel.MathRepsViewModelFactory(
             (activity?.application as MathRepsApplication).database
                 .attemptDao()
@@ -26,7 +26,9 @@ class Statistics : Fragment() {
 
     private val binding get() = _binding!!
 
-    //private val sharedViewModel: MathRepsViewModel by activityViewModels()
+    //private val viewModel: MathViewModel by activityViewModels()
+
+    private val sharedViewModel: MathViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +46,7 @@ class Statistics : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            viewModel = this.viewModel
+            viewModel = sharedViewModel
             statistics = this@Statistics
         }
     }
