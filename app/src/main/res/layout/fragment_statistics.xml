@@ -27,19 +27,19 @@
 
 
         <TextView
-            android:id="@+id/textView27"
+            android:id="@+id/textViewD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView28"
+            app:layout_constraintEnd_toEndOf="@+id/textViewND"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/textView21"
             app:layout_constraintTop_toTopOf="@+id/textView21"
-            tools:text="0" />
+            />
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/textViewND"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -47,10 +47,10 @@
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/textView23"
             app:layout_constraintTop_toTopOf="@+id/textView23"
-            tools:text="0" />
+            />
 
         <TextView
-            android:id="@+id/textView29"
+            android:id="@+id/textViewSWD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -58,7 +58,7 @@
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/textView25"
             app:layout_constraintTop_toTopOf="@+id/textView25"
-            tools:text="0" />
+            />
 
         <TextView
             android:id="@+id/textView23"
@@ -246,7 +246,7 @@
             app:layout_constraintEnd_toEndOf="@+id/currentCorrectTracker"
             app:layout_constraintStart_toEndOf="@+id/currentCorrectTracker"
             app:layout_constraintTop_toTopOf="@+id/textView16"
-            android:text='@{dViewModel.numberRepsAllTime.toString()}'/>
+            android:text='@{viewModel.numberRepsAllTime.toString()}'/>
         <TextView
             android:id="@+id/textView18"
             android:layout_width="wrap_content"
@@ -261,14 +261,14 @@
             app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
         <TextView
-            android:id="@+id/textView26"
+            android:id="@+id/textViewVD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView29"
+            app:layout_constraintEnd_toEndOf="@+id/textViewSWD"
             app:layout_constraintTop_toTopOf="@+id/textView24"
-            tools:text="0" />
+             />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

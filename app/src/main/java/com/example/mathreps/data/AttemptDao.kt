@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface AttemptDao {
     //query for whole table (Will be used to calculate statistics after the list of attempts has been generated)
     @Query("SELECT * from Attempt")
-    fun getAttempts(): Flow<List<Attempt>>
+    suspend fun getAttempts(): List<Attempt>
 
     //Inserts an attempt to the database
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -19,17 +19,17 @@ interface AttemptDao {
 
 
     @Query("SELECT wol FROM Attempt")
-    fun getWOL(): Flow<String>
+    suspend fun getWOL(): List<String>
 
     @Query("SELECT wol FROM Attempt WHERE wol = 'not_difficult'")
-    fun getNotDiff(): Flow<String>
+    suspend fun getNotDiff(): List<String>
 
     @Query("SELECT wol FROM Attempt WHERE wol = 'somewhat_difficult'")
-    fun getSWDiff(): Flow<String>
+    suspend fun getSWDiff(): List<String>
 
     @Query("SELECT wol FROM Attempt WHERE wol = 'difficult'")
-    fun getDiff(): Flow<String>
+    suspend fun getDiff(): List<String>
 
     @Query("SELECT wol FROM Attempt WHERE wol = 'very_difficult'")
-    fun getVDiff(): Flow<String>
+    suspend fun getVDiff(): List<String>
 }

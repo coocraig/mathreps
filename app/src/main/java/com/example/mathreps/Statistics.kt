@@ -10,6 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.mathreps.databinding.FragmentPregameBinding
 import com.example.mathreps.databinding.FragmentSettingsBinding
 import com.example.mathreps.databinding.FragmentStatisticsBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
 
 
 class Statistics : Fragment() {
@@ -45,11 +48,17 @@ class Statistics : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //dataViewModel.numberOfRepsAllTime()
-        dataViewModel.setATNOR()
+
+        CoroutineScope(Main).launch {
+            binding.allTimeReps.setText(dataViewModel.getNumberOfReps().toString())
+            binding.textViewD.setText(dataViewModel.getNumberOfD().toString())
+            binding.textViewND.setText(dataViewModel.getNumberOfND().toString())
+            binding.textViewSWD.setText(dataViewModel.getNumberOfSWD().toString())
+            binding.textViewVD.setText(dataViewModel.getNumberOfVD().toString())
+        }
         binding.apply {
             viewModel = sharedViewModel
-            //dViewModel = dataViewModel
+            dViewModel = dataViewModel
             statistics = this@Statistics
         }
     }

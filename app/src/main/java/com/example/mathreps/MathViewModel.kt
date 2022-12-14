@@ -4,8 +4,17 @@ import androidx.lifecycle.*
 import com.example.mathreps.data.Attempt
 import com.example.mathreps.data.AttemptDao
 import kotlinx.coroutines.launch
+import com.example.mathreps.MathRepsViewModel
 
 class MathViewModel() : ViewModel(){
+
+    private val _numberRepsAllTime = MutableLiveData<Int?>()
+    val numberRepsAllTime: LiveData<Int?> = _numberRepsAllTime
+
+    fun setATNORZ(newVal: Int) {
+        _numberRepsAllTime.value = newVal
+    }
+
     //Determines if audio ought to be played or not
     private val _audio = MutableLiveData<Boolean?>(true)
     val audio: LiveData<Boolean?> = _audio
@@ -18,6 +27,7 @@ class MathViewModel() : ViewModel(){
     //Determines if audio ought to be played or not
     private val _showUserRating = MutableLiveData<Boolean?>(true)
     val showUserRating: LiveData<Boolean?> = _showUserRating
+
 
     //function to set the audio on or off for the game
     fun setShowUserRating(bool: Boolean){

@@ -1,50 +1,79 @@
 package com.example.mathreps
 
+import android.content.ClipData
 import androidx.lifecycle.*
 import com.example.mathreps.data.Attempt
 import com.example.mathreps.data.AttemptDao
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 
 //Model that is exclusively used for accessing database type shit
 class MathRepsViewModel(private val attemptDao: AttemptDao) : ViewModel() {
 
-    //Cache all the strings from the dao
-    //var numberRepsAllTime = attemptDao.getWOL().asLiveData().value?.length
+    // Cache all items form the database using LiveData.
+    //private var allAttempt: LiveData<List<Attempt>> = attemptDao.getAttempts().asLiveData()
 
-    //Determines if audio ought to be played or not
-    private val _numberRepsAllTime = MutableLiveData<Int?>(0)
-    val numberRepsAllTime: LiveData<Int?> = _numberRepsAllTime
 
+//    private val _numberRepsAllTime = MutableLiveData<Int?>(0)
+//    val numberRepsAllTime: LiveData<Int?> = _numberRepsAllTime
+
+    var numberRepsAllTime: Int = 0
     //sets number of reps for all time
-    fun setATNOR()
-    {
-        _numberRepsAllTime.value = attemptDao.getWOL().asLiveData().value?.length
-        if(_numberRepsAllTime.value == null)
-        {
-            _numberRepsAllTime.value = 45
+//    fun setATNOR()
+//    {
+//        viewModelScope.launch(Dispatchers.IO) {
+//            numberRepsAllTime = arrayOf(attemptDao.getAttempts().
+//            if(numberRepsAllTime == null)
+//            {
+//                numberRepsAllTime = 45000
+//            }
+//        }
+//    }
+
+//    fun returnATNOR(): Int {
+//        var amount = 0
+//        viewModelScope.launch {
+//            amount = attemptDao.getAttempts().toList().size
+//        }
+//        return amount
+//    }
+
+    suspend fun getNumberOfReps():Int{
+        val deferred: Deferred<List<Attempt>> = viewModelScope.async {
+            attemptDao.getAttempts()
         }
+        return  deferred.await().size
     }
 
-    //Directly accesses values from the database for
-    fun numberOfRepsAllTime(): Int {
-        return attemptDao.getWOL().asLiveData().value?.length!!
+    suspend fun getNumberOfND():Int{
+        val deferred: Deferred<List<String>> = viewModelScope.async {
+            attemptDao.getNotDiff()
+        }
+        return  deferred.await().size
     }
 
-    fun numberOfNDiff(): Int {
-        return attemptDao.getNotDiff().asLiveData().value?.length!!
+    suspend fun getNumberOfSWD():Int{
+        val deferred: Deferred<List<String>> = viewModelScope.async {
+            attemptDao.getSWDiff()
+        }
+        return  deferred.await().size
     }
 
-    fun numberOfSWDiff(): Int {
-        return attemptDao.getSWDiff().asLiveData().value?.length!!
+    suspend fun getNumberOfD():Int{
+        val deferred: Deferred<List<String>> = viewModelScope.async {
+            attemptDao.getDiff()
+        }
+        return  deferred.await().size
     }
 
-    fun numberOfDiff(): Int {
-        return attemptDao.getDiff().asLiveData().value?.length!!
-    }
-
-    fun numberOfVDiff(): Int {
-        return attemptDao.getVDiff().asLiveData().value?.length!!
+    suspend fun getNumberOfVD():Int{
+        val deferred: Deferred<List<String>> = viewModelScope.async {
+            attemptDao.getVDiff()
+        }
+        return  deferred.await().size
     }
 
 
