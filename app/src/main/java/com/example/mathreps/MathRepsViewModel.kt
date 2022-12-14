@@ -10,7 +10,21 @@ import kotlinx.coroutines.launch
 class MathRepsViewModel(private val attemptDao: AttemptDao) : ViewModel() {
 
     //Cache all the strings from the dao
-    val numberRepsAllTime = attemptDao.getWOL().asLiveData().value?.length
+    //var numberRepsAllTime = attemptDao.getWOL().asLiveData().value?.length
+
+    //Determines if audio ought to be played or not
+    private val _numberRepsAllTime = MutableLiveData<Int?>(0)
+    val numberRepsAllTime: LiveData<Int?> = _numberRepsAllTime
+
+    //sets number of reps for all time
+    fun setATNOR()
+    {
+        _numberRepsAllTime.value = attemptDao.getWOL().asLiveData().value?.length
+        if(_numberRepsAllTime.value == null)
+        {
+            _numberRepsAllTime.value = 45
+        }
+    }
 
     //Directly accesses values from the database for
     fun numberOfRepsAllTime(): Int {

@@ -45,6 +45,8 @@ class Statistics : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //dataViewModel.numberOfRepsAllTime()
+        dataViewModel.setATNOR()
         binding.apply {
             viewModel = sharedViewModel
             //dViewModel = dataViewModel

@@ -45,7 +45,7 @@ class Rating : Fragment() {
             rating = this@Rating
         }
         binding.toResults.setOnClickListener{
-            //addNewAttempt()
+            addNewAttempt()
             //Needs to be implemented
             onToResults()
         }

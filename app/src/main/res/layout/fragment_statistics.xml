@@ -245,8 +245,8 @@
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/currentCorrectTracker"
             app:layout_constraintStart_toEndOf="@+id/currentCorrectTracker"
-            app:layout_constraintTop_toTopOf="@+id/textView16" />
-
+            app:layout_constraintTop_toTopOf="@+id/textView16"
+            android:text='@{dViewModel.numberRepsAllTime.toString()}'/>
         <TextView
             android:id="@+id/textView18"
             android:layout_width="wrap_content"
