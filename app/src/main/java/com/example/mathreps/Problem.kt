@@ -67,8 +67,13 @@ class Problem : Fragment() {
         sharedViewModel.setAnswer(input)
         sharedViewModel.setResultText()
 
-
-        findNavController().navigate(R.id.action_problem_to_rating)
+        if(sharedViewModel.showUserRating.value == true)
+        {
+            findNavController().navigate(R.id.action_problem_to_rating)
+        }
+        else {
+            findNavController().navigate(R.id.action_problem_to_results)
+        }
     }
 
 

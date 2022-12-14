@@ -15,6 +15,16 @@ class MathViewModel() : ViewModel(){
         _audio.value = bool
     }
 
+    //Determines if audio ought to be played or not
+    private val _showUserRating = MutableLiveData<Boolean?>(true)
+    val showUserRating: LiveData<Boolean?> = _showUserRating
+
+    //function to set the audio on or off for the game
+    fun setShowUserRating(bool: Boolean){
+        _showUserRating.value = bool
+    }
+
+
     //The amount of reps in current sesssion
     private val _seshReps = MutableLiveData<Int?>(0)
     val seshReps: LiveData<Int?> = _seshReps

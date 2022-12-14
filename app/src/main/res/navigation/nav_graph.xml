@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_problem_to_rating"
             app:destination="@id/rating" />
+        <action
+            android:id="@+id/action_problem_to_results"
+            app:destination="@id/results" />
     </fragment>
     <fragment
         android:id="@+id/results"

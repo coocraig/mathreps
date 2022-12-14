@@ -66,30 +66,53 @@
         app:layout_constraintStart_toEndOf="@+id/setstatbutton"
         app:layout_constraintTop_toTopOf="@+id/setprebutton" />
 
-    <Switch
-        android:id="@+id/toggle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:checked="true"
-        android:text="Win/Loss Audio"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Switch
+            android:id="@+id/toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:checked="true"
+            android:text="Win/Loss Audio"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:text="Save Settings"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/toggle"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/toggle"
-        app:layout_constraintTop_toBottomOf="@+id/toggle" />
+        <Switch
+            android:id="@+id/toggle2"
+            android:layout_width="365dp"
+            android:layout_height="111dp"
+            android:layout_marginTop="240dp"
+            android:checked="true"
+            android:text="Long Term Learn Mode"
+            android:textAlignment="center"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="@+id/toggle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="228dp"
+            android:text="Save Settings"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/toggle"
+            app:layout_constraintHorizontal_bias="0.543"
+            app:layout_constraintStart_toStartOf="@+id/toggle"
+            app:layout_constraintTop_toBottomOf="@+id/toggle" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Records data across sessions of the app and includes other features to track long term progress"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/toggle2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/toggle2"
+            app:layout_constraintTop_toBottomOf="@+id/toggle2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

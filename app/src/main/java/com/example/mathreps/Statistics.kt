@@ -47,6 +47,7 @@ class Statistics : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             viewModel = sharedViewModel
+            //dViewModel = dataViewModel
             statistics = this@Statistics
         }
     }

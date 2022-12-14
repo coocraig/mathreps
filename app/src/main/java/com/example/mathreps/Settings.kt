@@ -50,6 +50,7 @@ class Settings : Fragment() {
 
         binding.submitButton.setOnClickListener{
             sharedViewModel.setAudio(binding.toggle.isChecked)
+            sharedViewModel.setShowUserRating(binding.toggle2.isChecked)
             //findNavController().navigate(R.id.action_settings_to_pregame)
         }
     }

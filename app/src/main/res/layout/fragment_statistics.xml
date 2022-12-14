@@ -13,6 +13,11 @@
         <variable
             name="statistics"
             type="com.example.mathreps.Statistics" />
+
+        <variable
+            name="dViewModel"
+            type="com.example.mathreps.MathRepsViewModel"
+            />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,7 +35,7 @@
             app:layout_constraintEnd_toEndOf="@+id/textView28"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/textView21"
-            tools:layout_editor_absoluteY="598dp"
+            app:layout_constraintTop_toTopOf="@+id/textView21"
             tools:text="0" />
 
         <TextView

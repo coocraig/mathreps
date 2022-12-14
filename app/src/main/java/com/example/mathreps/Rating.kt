@@ -56,13 +56,13 @@ class Rating : Fragment() {
 
     private fun addNewAttempt(){
         if(binding.notDiffButton.isChecked){
-            viewModel.addNewAttempt("not difficult")
+            viewModel.addNewAttempt("not_difficult")
         } else if (binding.somDiffButton.isChecked) {
-            viewModel.addNewAttempt("somewhat difficult")
+            viewModel.addNewAttempt("somewhat_difficult")
         } else if (binding.diffButton.isChecked) {
             viewModel.addNewAttempt("difficult")
         } else {
-            viewModel.addNewAttempt("very difficult")
+            viewModel.addNewAttempt("very_difficult")
         }
     }
 
